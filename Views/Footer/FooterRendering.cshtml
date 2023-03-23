@@ -1,0 +1,93 @@
+﻿@using Sitecore.Mvc
+@model AssesmentSc.Models.FooterModel
+
+<div class="Footer_container">
+    <div class="footer_logo">
+        <img src="@Model.imgsrc">
+    </div>
+
+
+    <div class="footer_main">
+
+        <div class="column1">
+            <ul class="column1_firstList">
+                @if (Model.list1 != null)
+                {
+                    foreach (var childItem in Model.list1)
+                    {
+                        <li><a href="@childItem.url">@childItem.text</a></li>
+                    }
+                }
+
+            </ul>
+
+            <div class="Logos">
+                <ul>
+                    @if (Model.list2 != null)
+                    {
+
+                        foreach (var childItem in Model.list2)
+                        {
+                            <li> <a href="@childItem.cta">  <img src="@childItem.iconSrc">  </a> </li>
+                        }
+
+                    }
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="column2">
+            <ul>
+                @if (Model.list3 != null)
+                {
+
+                    foreach (var childItem in Model.list3)
+                    {
+                        <li><a href="@childItem.url">@childItem.text</a></li>
+                    }
+                }
+            </ul>
+
+        </div>
+
+
+        <div class="column3">
+            <ul>
+                @if (Model.list4 != null)
+                {
+
+                    foreach (var childItem in Model.list4)
+                    {
+                        <li><a href="@childItem.url">@childItem.text</a></li>
+                    }
+
+
+                }
+            </ul>
+
+
+
+            <ul>
+                @if (Model.list5 != null)
+                {
+                    foreach (var childItem in Model.list5)
+                    {
+                        <li><a href="@childItem.url">@childItem.text</a></li>
+                    }
+
+                }
+            </ul>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="copyright">
+        <p>@Model.copyRightText</p>
+    </div>
+
+</div>

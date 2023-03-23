@@ -1,0 +1,50 @@
+﻿@using Sitecore.Mvc
+@model  AssesmentSc.Models.CarouselModel
+
+
+
+<div class="Carousel">
+
+    <div class="Carousel_img">   <img src="@Model.backImgSrc"> </div>
+  
+
+    <div class="Slider">    
+        <div class="btn">
+            <div class="prev_button" onclick="controller(-1)">
+                <img src="~/Asset/img/orange_arrow.png">
+            </div>
+            <div class="next_button" onclick="controller(1)">
+                <img src="~/Asset/img/orange_arrow_right.png">
+            </div>
+        </div>
+
+        @if (Model.slides != null)
+        {
+            foreach (var childItem in Model.slides)
+            {
+
+                <div class="slides">
+                    <h1>@childItem.Title</h1>
+                    <p>@childItem.sub_Title</p>
+
+                    <button>
+                        <a href="@childItem.ctaSrc">@childItem.ctaText</a>
+                    </button>
+
+                    <img src="@childItem.imgSrc">
+                    <h3>@childItem.Name</h3>
+                </div>
+
+            }
+        }
+
+    </div>
+
+
+
+    <h2>@Model.title</h2>
+
+</div>
+
+
+

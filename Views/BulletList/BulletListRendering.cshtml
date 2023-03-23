@@ -1,0 +1,73 @@
+﻿@using Sitecore.Mvc
+@model  AssesmentSc.Models.BulletListModel
+
+
+
+<div class="Bullet_List">
+
+    <div class="BulletList_content">
+        <h1>@Model.Title</h1>
+        <p>@Model.Description</p>
+    </div>
+
+    <div class="Listing">
+
+        <div class="List">
+
+            <ul>
+                @if (Model.data1 != null)
+                {
+                    foreach (var childitrm in Model.data1)
+                    {
+                        <li><a href="@childitrm.url"> @childitrm.ctaText</a></li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <div class="List">
+
+            <ul>
+                @if (Model.data2 != null)
+                {
+                    foreach (var childitrm in Model.data2)
+                    {
+                        <li><a href="@childitrm.url"> @childitrm.ctaText</a></li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+
+        <div class="List">
+
+            <ul>
+                @if (Model.data3 != null)
+                {
+                    foreach (var childitrm in Model.data3)
+                    {
+                        <li><a href="@childitrm.url"> @childitrm.ctaText</a></li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+        <div class="List">
+
+            <ul>
+                @if (Model.data4 != null)
+                {
+                    foreach (var childitrm in Model.data4)
+                    {
+                        <li><a href="@childitrm.url"> @childitrm.ctaText</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
